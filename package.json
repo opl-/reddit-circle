@@ -1,8 +1,8 @@
 {
-  "name": "reddit-snake",
+  "name": "reddit-circle",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/RedditSnakeDump.js",
+  "main": "lib/RedditCircleDump.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./index.js",
     "start": "cross-env NODE_ENV=production node ./index.js"
@@ -16,6 +16,7 @@
   "dependencies": {
     "cross-env": "^5.1.4",
     "mysql2": "^1.5.3",
+    "uws": "^9.14.0",
     "ws": "^5.1.0"
   }
 }

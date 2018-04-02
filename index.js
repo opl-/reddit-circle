@@ -1,4 +1,4 @@
 const config = require('./config');
-const RedditSnakeDump = require('./lib/RedditSnakeDump');
+const RedditCircleDump = require('./lib/RedditCircleDump');
 
-new RedditSnakeDump(config);
+new RedditCircleDump(config);
