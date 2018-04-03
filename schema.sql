@@ -11,7 +11,8 @@ CREATE TABLE `circle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `circlestatus` (
-  `circleID` varchar(16) NOT NULL,
+  `id` int(11) NOT NULL,
+  `circle` varchar(16) NOT NULL,
   `timestamp` bigint(20) NOT NULL,
   `score` int(11) NOT NULL,
   `betrayed` tinyint(1) NOT NULL,
@@ -27,4 +28,8 @@ ALTER TABLE `circle`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 ALTER TABLE `circlestatus`
-  ADD PRIMARY KEY (`circleID`,`score`,`betrayed`,`outside`) USING BTREE;
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `circleID` (`circle`,`score`,`betrayed`,`outside`);
+
+ALTER TABLE `circlestatus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
