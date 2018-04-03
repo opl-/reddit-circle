@@ -22,7 +22,7 @@ CREATE TABLE `circlestatus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DELIMITER $$
-CREATE TRIGGER `UpdateCircle` AFTER INSERT ON `circlestatus` FOR EACH ROW UPDATE `circle` SET `score` = NEW.`score`, `betrayed` = NEW.`betrayed`, `outside` = NEW.`outside`, `authorBetrayer` = NEW.`authorBetrayer` WHERE `id` = NEW.`circleID`
+CREATE TRIGGER `UpdateCircle` AFTER INSERT ON `circlestatus` FOR EACH ROW UPDATE `circle` SET `score` = NEW.`score`, `betrayed` = NEW.`betrayed`, `outside` = NEW.`outside`, `authorBetrayer` = NEW.`authorBetrayer` WHERE `id` = NEW.`circle`
 $$
 DELIMITER ;
 
